@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TTC Transport Receipt</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f3f3f3;
+      padding: 20px;
+    }
+
+    .receipt {
+      width: 1000px;
+      margin: 0 auto 25px auto;
+      background: #fff;
+      border: 2px solid #000;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    td {
+      border: 1px solid #000;
+      padding: 6px;
+      vertical-align: top;
+      font-size: 14px;
+    }
+
+    .company {
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      font-family: "Times New Roman", serif;
+      margin-bottom: 5px;
+    }
+
+    .sub {
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .copy-box {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      vertical-align: middle;
+      height: 90px;
+    }
+
+    .terms {
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .sign {
+      height: 90px;
+      text-align: center;
+      vertical-align: bottom;
+      padding-bottom: 10px;
+    }
+
+    .charges td {
+      height: 32px;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+
+      .receipt {
+        margin-bottom: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= RECEIPT 1 ================= -->
+
+  <div class="receipt">
+
+    <table>
+
+      <!-- HEADER -->
+      <tr>
+
+        <td colspan="6">
+
+          <div class="company">
+            Travancore Transport Company Pvt. Ltd.
+          </div>
+
+          <div class="sub">
+            HO: 22-765 Karshaka Complex, Mariyappally, Kottayam, Kerala - 686023<br>
+            Ph: 9207120632 | Website: www.ttcpl.in<br>
+            <span class="bold">GST: 32AADCT8460D1ZJ</span>
+          </div>
+
+        </td>
+
+        <!-- RIGHT HEADER -->
+        <td colspan="2" style="padding:0;">
+
+          <table style="width:100%; border-collapse:collapse; height:100%;">
+
+            <tr>
+
+              <td class="bold">
+                Date: 24/05/2026
+              </td>
+
+              <td class="bold">
+                GC No: BLW000675
+              </td>
+
+            </tr>
+
+            <tr>
+
+              <td class="bold">
+                From: BHILWARA (BLW)
+              </td>
+
+              <td class="bold">
+                To: CALICUT (CLT)
+              </td>
+
+            </tr>
+
+          </table>
+
+        </td>
+
+      </tr>
+
+      <!-- CONSIGNOR -->
+      <tr>
+
+        <td colspan="4">
+          <span class="bold">Consignor:</span> SPARSH FAB TEXTILES<br>
+          GST No.: 08AAHPN5613K1ZH
+        </td>
+
+        <td colspan="4">
+          <span class="bold">Consignee:</span> ADARSH TRADING COM<br>
+          GST No.: 32EMGPS9464C1ZT
+        </td>
+
+      </tr>
+
+      <!-- TABLE HEAD -->
+      <tr>
+
+        <td class="center bold" width="10%">
+          Packages
+        </td>
+
+        <td class="center bold" colspan="3">
+          Description
+        </td>
+
+        <td class="center bold">
+          Weight Actual
+        </td>
+
+        <td class="center bold">
+          Weight Charged
+        </td>
+
+        <td class="center bold">
+          Charges
+        </td>
+
+        <td class="center bold">
+          Amount
+        </td>
+
+      </tr>
+
+      <!-- DATA -->
+      <tr class="charges">
+
+        <td class="center">
+          2 Bale
+        </td>
+
+        <td colspan="3">
+          Cotton cloth
+        </td>
+
+        <td class="center">
+          140 Kg
+        </td>
+
+        <td class="center">
+          140 Kg
+        </td>
+
+        <td>
+          Base<br>
+          Hamali<br>
+          St. Ch.<br>
+          Misc.
+        </td>
+
+        <td>
+          Rs.1680<br>
+          Rs.0<br>
+          Rs.0<br>
+          Rs.0
+        </td>
+
+      </tr>
+
+      <!-- EWB -->
+      <tr>
+
+        <td colspan="2">
+          <span class="bold">Pvt. Nos:</span> 4754-4756
+        </td>
+
+        <td colspan="2">
+          <span class="bold">EWB:</span> 741636354733
+        </td>
+
+        <td colspan="2">
+          <span class="bold">Value:</span> Rs.20863
+        </td>
+
+        <td class="center bold">
+          TOTAL
+        </td>
+
+        <td class="bold">
+          Rs.1680
+        </td>
+
+      </tr>
+
+      <!-- FOOTER -->
+      <tr>
+
+        <td colspan="5" class="terms">
+
+          <span class="bold">OWNER'S RISK</span><br>
+
+          1. Booked at owner's risk<br>
+          2. Goods to be insured by the party & to be sent at owner's risk<br>
+          3. We are not responsible for breakage, leakage and damage<br>
+          4. Subject to Kottayam jurisdiction only
+
+        </td>
+
+        <td colspan="2" class="copy-box">
+          ORIGINAL COPY
+        </td>
+
+        <td class="sign">
+          For TTC,<br><br>
+          Sign
+        </td>
+
+      </tr>
+
+    </table>
+
+  </div>
+
+
+
+
+
+  <!-- ================= RECEIPT 2 ================= -->
+
+  <div class="receipt">
+
+    <table>
+
+      <!-- HEADER -->
+      <tr>
+
+        <td colspan="6">
+
+          <div class="company">
+            Travancore Transport Company Pvt. Ltd.
+          </div>
+
+          <div class="sub">
+            HO: 22-765 Karshaka Complex, Mariyappally, Kottayam, Kerala - 686023<br>
+            Ph: 9207120632 | Website: www.ttcpl.in<br>
+            <span class="bold">GST: 32AADCT8460D1ZJ</span>
+          </div>
+
+        </td>
+
+        <td colspan="2" style="padding:0;">
+
+          <table style="width:100%; border-collapse:collapse; height:100%;">
+
+            <tr>
+
+              <td class="bold">
+                Date: 24/05/2026
+              </td>
+
+              <td class="bold">
+                GC No: BLW000675
+              </td>
+
+            </tr>
+
+            <tr>
+
+              <td class="bold">
+                From: BHILWARA (BLW)
+              </td>
+
+              <td class="bold">
+                To: CALICUT (CLT)
+              </td>
+
+            </tr>
+
+          </table>
+
+        </td>
+
+      </tr>
+
+      <!-- CONSIGNOR -->
+      <tr>
+
+        <td colspan="4">
+          <span class="bold">Consignor:</span> SPARSH FAB TEXTILES<br>
+          GST No.: 08AAHPN5613K1ZH
+        </td>
+
+        <td colspan="4">
+          <span class="bold">Consignee:</span> ADARSH TRADING COM<br>
+          GST No.: 32EMGPS9464C1ZT
+        </td>
+
+      </tr>
+
+      <!-- TABLE HEAD -->
+      <tr>
+
+        <td class="center bold">
+          Packages
+        </td>
+
+        <td class="center bold" colspan="3">
+          Description
+        </td>
+
+        <td class="center bold">
+          Weight Actual
+        </td>
+
+        <td class="center bold">
+          Weight Charged
+        </td>
+
+        <td class="center bold">
+          Charges
+        </td>
+
+        <td class="center bold">
+          Amount
+        </td>
+
+      </tr>
+
+      <!-- DATA -->
+      <tr class="charges">
+
+        <td class="center">
+          2 Bale
+        </td>
+
+        <td colspan="3">
+          Cotton cloth
+        </td>
+
+        <td class="center">
+          140 Kg
+        </td>
+
+        <td class="center">
+          140 Kg
+        </td>
+
+        <td>
+          Base<br>
+          Hamali<br>
+          St. Ch.<br>
+          Misc.
+        </td>
+
+        <td>
+          Rs.1680<br>
+          Rs.0<br>
+          Rs.0<br>
+          Rs.0
+        </td>
+
+      </tr>
+
+      <!-- EWB -->
+      <tr>
+
+        <td colspan="2">
+          <span class="bold">Pvt. Nos:</span> 4754-4756
+        </td>
+
+        <td colspan="2">
+          <span class="bold">EWB:</span> 741636354733
+        </td>
+
+        <td colspan="2">
+          <span class="bold">Value:</span> Rs.20863
+        </td>
+
+        <td class="center bold">
+          TOTAL
+        </td>
+
+        <td class="bold">
+          Rs.1680
+        </td>
+
+      </tr>
+
+      <!-- FOOTER -->
+      <tr>
+
+        <td colspan="5" class="terms">
+
+          <span class="bold">OWNER'S RISK</span><br>
+
+          1. Booked at owner's risk<br>
+          2. Goods to be insured by the party & to be sent at owner's risk<br>
+          3. We are not responsible for breakage, leakage and damage<br>
+          4. Subject to Kottayam jurisdiction only
+
+        </td>
+
+        <td colspan="2" class="copy-box">
+          RECORD COPY
+        </td>
+
+        <td class="sign">
+          For TTC,<br><br>
+          Sign
+        </td>
+
+      </tr>
+
+    </table>
+
+  </div>
+
+
+
+
+
+  <!-- ================= RECEIPT 3 ================= -->
+
+  <div class="receipt">
+
+    <table>
+
+      <!-- HEADER -->
+      <tr>
+
+        <td colspan="6">
+
+          <div class="company">
+            Travancore Transport Company Pvt. Ltd.
+          </div>
+
+          <div class="sub">
+            HO: 22-765 Karshaka Complex, Mariyappally, Kottayam, Kerala - 686023<br>
+            Ph: 9207120632 | Website: www.ttcpl.in<br>
+            <span class="bold">GST: 32AADCT8460D1ZJ</span>
+          </div>
+
+        </td>
+
+        <td colspan="2" style="padding:0;">
+
+          <table style="width:100%; border-collapse:collapse; height:100%;">
+
+            <tr>
+
+              <td class="bold">
+                Date: 24/05/2026
+              </td>
+
+              <td class="bold">
+                GC No: BLW000675
+              </td>
+
+            </tr>
+
+            <tr>
+
+              <td class="bold">
+                From: BHILWARA (BLW)
+              </td>
+
+              <td class="bold">
+                To: CALICUT (CLT)
+              </td>
+
+            </tr>
+
+          </table>
+
+        </td>
+
+      </tr>
+
+      <!-- CONSIGNOR -->
+      <tr>
+
+        <td colspan="4">
+          <span class="bold">Consignor:</span> SPARSH FAB TEXTILES<br>
+          GST No.: 08AAHPN5613K1ZH
+        </td>
+
+        <td colspan="4">
+          <span class="bold">Consignee:</span> ADARSH TRADING COM<br>
+          GST No.: 32EMGPS9464C1ZT
+        </td>
+
+      </tr>
+
+      <!-- TABLE HEAD -->
+      <tr>
+
+        <td class="center bold">
+          Packages
+        </td>
+
+        <td class="center bold" colspan="3">
+          Description
+        </td>
+
+        <td class="center bold">
+          Weight Actual
+        </td>
+
+        <td class="center bold">
+          Weight Charged
+        </td>
+
+        <td class="center bold">
+          Charges
+        </td>
+
+        <td class="center bold">
+          Amount
+        </td>
+
+      </tr>
+
+      <!-- DATA -->
+      <tr class="charges">
+
+        <td class="center">
+          2 Bale
+        </td>
+
+        <td colspan="3">
+          Cotton cloth
+        </td>
+
+        <td class="center">
+          140 Kg
+        </td>
+
+        <td class="center">
+          140 Kg
+        </td>
+
+        <td>
+          Base<br>
+          Hamali<br>
+          St. Ch.<br>
+          Misc.
+        </td>
+
+        <td>
+          Rs.1680<br>
+          Rs.0<br>
+          Rs.0<br>
+          Rs.0
+        </td>
+
+      </tr>
+
+      <!-- EWB -->
+      <tr>
+
+        <td colspan="2">
+          <span class="bold">Pvt. Nos:</span> 4754-4756
+        </td>
+
+        <td colspan="2">
+          <span class="bold">EWB:</span> 741636354733
+        </td>
+
+        <td colspan="2">
+          <span class="bold">Value:</span> Rs.20863
+        </td>
+
+        <td class="center bold">
+          TOTAL
+        </td>
+
+        <td class="bold">
+          Rs.1680
+        </td>
+
+      </tr>
+
+      <!-- FOOTER -->
+      <tr>
+
+        <td colspan="5" class="terms">
+
+          <span class="bold">OWNER'S RISK</span><br>
+
+          1. Booked at owner's risk<br>
+          2. Goods to be insured by the party & to be sent at owner's risk<br>
+          3. We are not responsible for breakage, leakage and damage<br>
+          4. Subject to Kottayam jurisdiction only
+
+        </td>
+
+        <td colspan="2" class="copy-box">
+          DRIVER COPY
+        </td>
+
+        <td class="sign">
+          For TTC,<br><br>
+          Sign
+        </td>
+
+      </tr>
+
+    </table>
+
+  </div>
+
+</body>
+
+</html>

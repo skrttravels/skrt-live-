@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Delivery Statement</title>
+  <style>
+    @page { size: A4 landscape; margin: 8mm; }
+    body { margin: 0; padding: 20px; font-family: Arial, Helvetica, sans-serif; }
+    .page { background: white; padding: 15px; border: 2px solid black; }
+    table { width: 100%; border-collapse: collapse; }
+    .company{
+    text-align:center;
+    margin-top:10px;
+}
+    th, td { border: 1px solid black; font-size: 10px; padding: 4px 6px; }
+    th { text-transform: uppercase; font-weight: bold; background: #e8ecf0; }
+    thead { display: table-header-group; }
+    tr { page-break-inside: avoid; }
+    .tc { text-align: center; }
+    .tr { text-align: right; }
+    @media print {
+      body { background: white; padding: 0; margin: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .no-print { display: none; }
+      .page { border: none; margin: 0; padding: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="company">
+        <h1>Sant Kanwar Ram Transport Corp. (BHL.)</h2>
+        <p>123-124, Transport Nagar,<br>BHILWARA - 311001 (Raj.)</p>
+    </div>
+    <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:600;margin-bottom:8px;padding:0 4px;">
+      <span>Date: {{DATE}}</span>
+      <span>Page: {{PAGE_NO}}</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:4%">S.</th>
+          <th style="width:10%">D.R. No.</th>
+          <th style="width:13%">Freight</th>
+          <th style="width:13%">Labour</th>
+          <th style="width:15%">Stationery</th>
+          <th style="width:15%">Commission</th>
+          <th style="width:15%">A.O.C</th>
+          <th style="width:15%">Total</th>
+        </tr>
+      </thead>
+      <tbody>{{TABLE_ROWS}}{{TOTALS_ROW}}</tbody>
+    </table>
+  </div>
+</body>
+</html>

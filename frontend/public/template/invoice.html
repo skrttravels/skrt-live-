@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Invoice</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 30px; color: #111; background: #fff; line-height: 1.5; }
+    .header { text-align: center; border-bottom: 2px solid #2388ff; padding-bottom: 15px; margin-bottom: 25px; }
+    .header h1 { font-size: 26px; color: #2388ff; margin: 0; text-transform: uppercase; font-weight: 900; }
+    .header p { margin: 5px 0 0 0; font-size: 13px; color: #555; }
+    .invoice-title { font-size: 32px; font-weight: 900; text-align: center; margin-bottom: 20px; color: #333; }
+    .meta-row { display: flex; justify-content: space-between; margin-bottom: 20px; font-size: 14px; }
+    .meta-box { border: 1px solid #ddd; padding: 12px; border-radius: 6px; }
+    .meta-box h3 { font-size: 12px; color: #888; margin-bottom: 5px; text-transform: uppercase; }
+    .meta-box p { margin: 2px 0; font-size: 14px; }
+    table.invoice-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    table.invoice-table th { background: #f2f4f7; padding: 10px; border: 1px solid #ddd; text-align: left; font-weight: bold; }
+    table.invoice-table td { padding: 10px; border: 1px solid #ddd; }
+    .num { text-align: right; font-family: monospace; font-size: 14px; }
+    .total-row { font-weight: bold; background: #f9fbfd; }
+    .grand-total { font-size: 18px; font-weight: 900; color: #2388ff; border-top: 2.5px solid #2388ff; }
+    .footer { margin-top: 60px; display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; }
+  </style>
+</head>
+<body onload="window.print();">
+  <div class="invoice-title">INVOICE</div>
+  <div class="header">
+    <h1>SANT KANWAR RAM TRANSPORT CORP. (BHL.)</h1>
+    <p>123-124, Transport Nagar, BHILWARA - 311001 (Raj.)</p>
+    <p>GST No: 08AAHPN5613K1ZH</p>
+  </div>
+
+  <div class="meta-row">
+    <div class="meta-box">
+      <h3>Invoice Details</h3>
+      <p><strong>Invoice No:</strong> {{INVOICE_NO}}</p>
+      <p><strong>Date:</strong> {{DATE}}</p>
+      <p><strong>Due Date:</strong> {{DUE_DATE}}</p>
+    </div>
+    <div class="meta-box">
+      <h3>Bill To</h3>
+      <p><strong>Client:</strong> {{CLIENT_NAME}}</p>
+      <p><strong>Email:</strong> {{CLIENT_EMAIL}}</p>
+      <p><strong>Phone:</strong> {{CLIENT_PHONE}}</p>
+    </div>
+  </div>
+
+  <table class="invoice-table">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th style="text-align:right; width: 25%;">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Shipment Carriage / Transport Services</td>
+        <td class="num">₹ {{SUBTOTAL}}</td>
+      </tr>
+      <tr>
+        <td>GST (18%)</td>
+        <td class="num">₹ {{GST}}</td>
+      </tr>
+      <tr class="grand-total">
+        <td>TOTAL</td>
+        <td class="num" style="font-size: 20px; font-weight: 900; color: #2388ff;">₹ {{TOTAL}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <div>Prepared By: SKRT ERP System</div>
+    <div>Authorized Signature: _________________________</div>
+  </div>
+</body>
+</html>

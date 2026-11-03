@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transport Summary</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f2a8b7;
+    color:#001f66;
+}
+
+.container{
+    width:800px;
+    margin:20px auto;
+    padding:40px;
+    background:#f2a8b7;
+}
+
+.top-bar{
+    display:flex;
+    justify-content:space-between;
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.dispute{
+    text-align:center;
+    font-size:13px;
+    margin-bottom:15px;
+}
+
+.company{
+    text-align:center;
+}
+
+.company h1{
+    font-size:22px;
+    font-weight:800;
+    margin-bottom:10px;
+}
+
+.company p{
+    font-size:16px;
+}
+
+.summary-title{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:30px 0;
+}
+
+.summary-title::before,
+.summary-title::after{
+    content:"";
+    flex:1;
+    border-bottom:2px solid #001f66;
+}
+
+.summary-title span{
+    margin:0 20px;
+    font-size:20px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:25px;
+}
+
+.field{
+    display:flex;
+    align-items:center;
+    width:48%;
+}
+
+.field label{
+    font-weight:bold;
+    margin-right:10px;
+    min-width:95px;
+}
+
+.line{
+    flex:1;
+    border-bottom:1px dotted #001f66;
+    margin:0 10px;
+}
+
+.value{
+    font-size:16px;
+    font-weight:600;
+    color:#000;
+}
+
+.full-row{
+    display:flex;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.full-row label{
+    font-weight:bold;
+    min-width:95px;
+}
+
+.full-row .line{
+    flex:1;
+}
+
+.section-title{
+    text-align:center;
+    font-size:12px;
+    letter-spacing:4px;
+    margin:35px 0 20px;
+    position:relative;
+}
+
+.section-title:before,
+.section-title:after{
+    content:"";
+    position:absolute;
+    top:50%;
+    width:38%;
+    border-bottom:1px solid rgba(0,31,102,0.3);
+}
+
+.section-title:before{
+    left:0;
+}
+
+.section-title:after{
+    right:0;
+}
+
+.grand-total{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-top:2px solid #001f66;
+    margin-top:35px;
+    padding-top:15px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.footer{
+    display:flex;
+    justify-content:space-between;
+    margin-top:60px;
+    font-weight:bold;
+    font-size:16px;
+}
+
+input{
+    border:none;
+    background:transparent;
+    border-bottom:1px dotted #001f66;
+    width:100%;
+    padding:2px;
+    font-size:16px;
+}
+
+input:focus{
+    outline:none;
+}
+
+@media print {
+    body { background: #f2a8b7; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    {{SLIPS_HTML}}
+</div>
+
+</body>
+</html>

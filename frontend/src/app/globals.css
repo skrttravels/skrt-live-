@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0f172a; /* Deep midnight blue */
+  --color-foreground: #f8fafc;
+  --color-primary: #2388ff; /* Vibrant blue */
+  --color-primary-foreground: #f8fafc;
+  --color-secondary: #1e293b;
+  --color-accent: #10b981; /* Logistics green */
+  --color-muted: #334155;
+  --color-border: #293548;
+  
+  --radius-lg: 1rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}

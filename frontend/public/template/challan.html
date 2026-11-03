@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Challan</title>
+<style>
+    body { font-family: Arial, sans-serif; margin:0; padding:20px; }
+    .challan { border: 2px solid #000; width: 650px; padding: 5mm; margin: 10mm auto; position: relative; background:white; font-size: 12px; box-sizing:border-box; }
+    .header-top { display: flex; justify-content: space-between; align-items: start; width: 100%; border-bottom: 2px solid #000; padding-bottom: 8px; margin-bottom: 8px; }
+    .jurisdiction { text-align: center; font-size: 11px; font-weight: bold; color: #000080; margin-bottom: 5px; }
+    .title { text-align: center; font-size: 22px; font-weight: bold; color: #000080; }
+    .subtitle { text-align: center; font-size: 14px; color: #000080; margin-bottom: 15px; }
+    .fields { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; }
+    .field-group { display: flex; align-items: center; flex: 1; min-width: 200px; }
+    .field-label { font-weight: bold; white-space: nowrap; margin-right: 6px; }
+    .field-value { border-bottom: 1px solid black; flex: 1; padding: 2px 4px; }
+    .notice { font-size: 11px; padding: 6px; border-left: 3px solid #000080; margin-bottom: 15px; font-style: italic; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid black; padding: 6px; font-size: 10px; }
+    th { background: #f0f0f0; font-weight: bold; text-align: center; text-transform: uppercase; }
+    .totals-box { display: flex; justify-content: space-between; border: 2px solid #333; padding: 12px; margin: 15px 0; }
+    .totals-item { text-align: center; flex: 1; }
+    .totals-item .num { font-size: 22px; font-weight: bold; color: #8b0000; }
+    .footer-row { display: flex; justify-content: space-between; align-items: end; margin-top: 20px; font-size: 12px; }
+    .signature-line { border-top: 1px solid black; padding-top: 4px; text-align: center; }
+    @page { size: A4 portrait; margin: 8mm; }
+    @media print {
+      body { margin: 0; padding: 0; background: #fff; }
+      .challan { margin: 0 auto; border: 2px solid #000; }
+    }
+</style>
+</head>
+<body>
+<div class="challan">
+    <div class="jurisdiction">Subject to BHILWARA Jurisdiction</div>
+    <div class="header-top">
+        <div style="font-size:12px; font-weight:bold; color:#111; line-height: 1.5; text-align: left;">
+            <div style="font-size:14x; font-weight:normal; color: #000;">Challan No.<br><h3>{{CHALLAN_NO}}</h3></div>
+            <div style="margin-top: 4px;">Date: {{DATE}}</div>
+        </div>
+        <div style="text-align: center; flex-grow: 1; padding: 0 20px;">
+            <div class="title" style="font-size: 20px; font-weight: 800; color: #000080; letter-spacing: 0.5px;">Sant Kanwar Ram Transport Corp. (BHL.)</div>
+            <div style="font-size: 11px; font-weight: bold; color: #555; margin-top: 3px;">123-124, Transport Nagar, BHILWARA - 311001 (Raj.)</div>
+        </div>
+        <div style="font-size:11px; font-weight:bold; text-align: right; color:#000080; line-height: 1.4; padding-right: 10px; white-space: nowrap;">
+            <span>Mob.: 96809-92567</span><br/>
+            <span>Mob.: 86196-06627</span>
+        </div>
+    </div>
+    <div class="fields" style="margin-top: 15px;">
+        <div class="field-group"><span class="field-label">From BHILWARA to</span><span class="field-value">{{FROM}}</span></div>
+        <div class="field-group"><span class="field-label">Vehicle No.</span><span class="field-value">{{VEHICLE_NO}}</span></div>
+        <div class="field-group"><span class="field-label">Owner's Name</span><span class="field-value">{{OWNER_NAME}}</span></div>
+        <div class="field-group" style="flex: 2; min-width: 200px;"><span class="field-label">Driver's Name</span><span class="field-value">{{DRIVER_NAME}}</span></div>
+    </div>
+    <div class="notice">Driver of this vehicle is responsible for goods which is loaded in this truck for safe &amp; sound delivery as per conditions mentioned overleaf.</div>
+    <table>
+        <thead>
+            <tr>
+                <th style="width:4%;">S. No.</th>
+                <th style="width:9%;">G.R. No.</th>
+                <th style="width:7%;">Pkg.</th>
+                <th style="width:14%;">Destination</th>
+                <th style="width:14%;">Content</th>
+                <th style="width:16%;">Consignor</th>
+                <th style="width:16%;">Consignee</th>
+                <th style="width:8%;">Total (Rs.)</th>
+                <th style="width:7%;">Wt.</th>
+            </tr>
+        </thead>
+        <tbody>{{TABLE_ROWS}}</tbody>
+    </table>
+    <div class="totals-box">
+        <div class="totals-item"><div>Total Packages</div><div class="num">{{TOTAL_PKG}}</div></div>
+        <div class="totals-item"><div>Total Weight</div><div class="num">{{TOTAL_WT}}</div></div>
+        <div class="totals-item"><div>Grand Total (Rs.)</div><div class="num">{{GRAND_TOTAL}}</div></div>
+    </div>
+    <div style="font-size:11px;margin-bottom:12px;padding:8px 12px;border:1px solid #ccc;border-radius:4px;">
+        <div style="padding:3px 0;"><strong>Commission:</strong> {{COMMISSION}}</div>
+        <div style="padding:3px 0;"><strong>Truck Freight:</strong> {{TRUCK_FREIGHT}}</div>
+        <div style="padding:3px 0;"><strong>Advance:</strong> {{ADVANCE}}</div>
+        <div style="padding:3px 0;"><strong>T.F Credit:</strong> {{TF_CREDIT}}</div>
+        <div style="padding:3px 0;"><strong>Total To Pay:</strong> {{TOTAL_TO_PAY}}</div>
+        <div style="padding:3px 0;"><strong>Other Charge:</strong> {{OTHER_CHARGE}}</div>
+        <div style="padding:3px 0;"><strong>LC/DC:</strong> {{LCDC}}</div>
+        <div style="padding:3px 0;"><strong>Crossing:</strong> {{CROSSING}}</div>
+        <div style="padding:3px 0;"><strong>Door Delivery:</strong> {{DOOR_DELIVERY}}</div>
+        <div style="padding:3px 0;"><strong>Balance Freight:</strong> {{BALANCE_FREIGHT}}</div>
+        <div style="padding:3px 0;"><strong>Note:</strong> {{CHARGES_NOTE}}</div>
+    </div>
+    <div style="font-size:11px;margin-bottom:15px;">Quantity &amp; Goods of this memo received in safe and sound condition</div>
+    <div class="footer-row">
+        <div>GST No. : <strong>08AAHPN5613K1ZH</strong></div>
+        <div>
+            <div style="text-align:right;font-weight:bold;">FOR : Sant Kanwar Ram Transport Corp. (BHL.)</div>
+            <div class="signature-line" style="width:200px;margin-left:auto;margin-top:8px;">Owner or Driver's Signature</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

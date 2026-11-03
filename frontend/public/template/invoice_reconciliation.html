@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reconciliation Invoice Statement</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 30px; color: #111; background: #fff; line-height: 1.5; }
+    .header { text-align: center; border-bottom: 2px solid #2388ff; padding-bottom: 15px; margin-bottom: 25px; }
+    .header h1 { font-size: 26px; color: #2388ff; margin: 0; text-transform: uppercase; font-weight: 900; }
+    .header p { margin: 5px 0 0 0; font-size: 13px; color: #555; }
+    .metadata { display: flex; justify-content: space-between; margin-bottom: 30px; font-size: 14px; }
+    .statement-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+    .statement-table th { background: #f2f4f7; padding: 10px; border: 1px solid #ddd; text-align: left; font-weight: bold; }
+    .statement-table td { padding: 10px; border: 1px solid #ddd; }
+    .section-title { font-weight: bold; background: #eaedf1; }
+    .num { text-align: right; font-family: monospace; font-size: 14px; }
+    .net-payable { font-size: 18px; font-weight: 900; color: #2388ff; border-top: 2.5px solid #2388ff; }
+    .footer { margin-top: 60px; display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; }
+  </style>
+</head>
+<body onload="window.print();">
+  <div class="header">
+    <h1>SANT KANWAR RAM TRANSPORT CORP. (BHL.)</h1>
+    <p>Reconciliation Invoice Statement</p>
+    <p>Period: {{START_DATE}} to {{END_DATE}}</p>
+  </div>
+  <div class="metadata">
+    <div><strong>Report Generated:</strong> {{REPORT_DATE}}</div>
+    <div><strong>Registers Count:</strong> Summary: {{SUMMARY_COUNT}} | DS: {{DS_COUNT}}</div>
+  </div>
+  
+  <table class="statement-table">
+    <thead>
+      <tr>
+        <th>Account Details & Breakdown</th>
+        <th style="text-align:right; width: 25%;">Credits (Revenue)</th>
+        <th style="text-align:right; width: 25%;">Debits (Expenses)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="section-title">
+        <td colspan="3">A. Summary Register Adjustments</td>
+      </tr>
+      <tr>
+        <td>Summary Credit</td>
+        <td class="num">₹ {{SUMMARY_CREDIT}}</td>
+        <td class="num">—</td>
+      </tr>
+      <tr>
+        <td>Summary Debit</td>
+        <td class="num">—</td>
+        <td class="num">₹ {{SUMMARY_DEBIT}}</td>
+      </tr>
+      <tr class="section-title">
+        <td colspan="3">B. Delivery Statement Ledger</td>
+      </tr>
+      <tr>
+        <td>Freight (Revenue Credit)</td>
+        <td class="num">₹ {{DS_FREIGHT}}</td>
+        <td class="num">—</td>
+      </tr>
+      <tr>
+        <td>Labour (Expense Debit)</td>
+        <td class="num">—</td>
+        <td class="num">₹ {{DS_LABOUR}}</td>
+      </tr>
+      <tr>
+        <td>Stationery (Expense Debit)</td>
+        <td class="num">—</td>
+        <td class="num">₹ {{DS_STATIONERY}}</td>
+      </tr>
+      <tr>
+        <td>Commission (Expense Debit)</td>
+        <td class="num">—</td>
+        <td class="num">₹ {{DS_COMMISSION}}</td>
+      </tr>
+      <tr>
+        <td>A.O.C (Expense Debit)</td>
+        <td class="num">—</td>
+        <td class="num">₹ {{DS_AOC}}</td>
+      </tr>
+      <tr style="font-weight: bold; background: #f9fbfd;">
+        <td>SUBTOTALS</td>
+        <td class="num" style="color: #10b981; font-weight: bold;">₹ {{TOTAL_CREDITS}}</td>
+        <td class="num" style="color: #ef4444; font-weight: bold;">₹ {{TOTAL_DEBITS}}</td>
+      </tr>
+      <tr class="net-payable">
+        <td>NET RECONCILED AMOUNT (Receivable)</td>
+        <td colspan="2" class="num" style="font-size: 20px; font-weight: 900; color: #2388ff;">₹ {{NET_RECEIVABLE}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <div>Prepared By: SKRT ERP System</div>
+    <div>Authorized Signature: _________________________</div>
+  </div>
+</body>
+</html>

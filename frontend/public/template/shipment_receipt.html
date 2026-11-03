@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shipment Receipt</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif;}
+    body{background:#f3f3f3;padding:20px;}
+    .receipt{width:1000px;margin:0 auto 25px auto;background:#fff;border:2px solid #000;}
+    table{width:100%;border-collapse:collapse;}
+    td{border:1px solid #000;padding:6px;vertical-align:top;font-size:14px;}
+    .company{text-align:center;font-size:28px;font-weight:bold;font-family:"Times New Roman",serif;margin-bottom:5px;}
+    .sub{text-align:center;font-size:12px;line-height:1.5;}
+    .bold{font-weight:bold;}
+    .center{text-align:center;}
+    .copy-box{text-align:center;font-size:24px;font-weight:bold;vertical-align:middle;height:90px;}
+    .terms{font-size:12px;line-height:1.6;}
+    .sign{height:90px;text-align:center;vertical-align:bottom;padding-bottom:10px;}
+    .charges td{height:32px;}
+    @page{size:A4 portrait;margin:5mm;}
+    @media print{
+      body{background:#fff;padding:0;margin:0;}
+      .receipt{margin:0 auto 2px auto;page-break-after:avoid;break-after:avoid;}
+    }
+  </style>
+</head>
+<body>
+  <div style="transform:scale(0.7);transform-origin:top left;width:1429px;">
+    {{COPIES_HTML}}
+  </div>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Delivery Register</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @page {
+      size: A3 landscape;
+      margin: 8mm;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #f3f4f6;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .page {
+      background: white;
+      padding: 20px;
+      border: 2px solid black;
+      min-height: 100vh;
+      page-break-after: always;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    th,
+    td {
+      border: 1px solid black;
+      font-size: 10px;
+      height: 28px;
+      padding: 2px;
+    }
+
+    th {
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    thead {
+      display: table-header-group;
+    }
+
+    tr {
+      page-break-inside: avoid;
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+        margin: 0;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .no-print {
+        display: none;
+      }
+
+      .page {
+        border: none;
+        margin: 0;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+ 
+
+  <!-- PAGE -->
+  <div class="page">
+
+    <!-- HEADER -->
+    <div class="text-center leading-tight mb-3">
+      <h1 class="text-3xl font-bold uppercase tracking-wide">
+        Sant Kanwar Ram
+      </h1>
+
+      <h2 class="text-2xl font-semibold uppercase">
+        Transport Corporation
+      </h2>
+
+      <p class="text-sm uppercase tracking-widest">
+        Bhilwara (Raj.)
+      </p>
+
+      <h3 class="text-2xl font-bold uppercase mt-1">
+        Delivery Register
+      </h3>
+    </div>
+
+    <!-- NUMBER -->
+    <div class="flex justify-end text-sm font-semibold mb-2 pr-4">
+      199
+    </div>
+
+    <!-- TABLE -->
+    <table>
+      <thead>
+        <tr>
+          <th style="width:4%">S. No.</th>
+          <th style="width:7%">From</th>
+          <th style="width:7%">To</th>
+          <th style="width:9%">G.R No.</th>
+          <th style="width:13%">Consignor</th>
+          <th style="width:13%">Consignee</th>
+          <th style="width:8%">No. of Packages</th>
+          <th style="width:12%">Contents</th>
+          <th style="width:7%">Freight</th>
+          <th style="width:10%">Delivery Receipt No.</th>
+          <th style="width:10%">Date of Delivery</th>
+        </tr>
+      </thead>
+
+      <tbody id="table-body"></tbody>
+    </table>
+
+  </div>
+
+  <script>
+    const tbody = document.getElementById("table-body");
+
+    for (let i = 0; i < 32; i++) {
+      const row = document.createElement("tr");
+
+      for (let j = 0; j < 11; j++) {
+        const td = document.createElement("td");
+        row.appendChild(td);
+      }
+
+      tbody.appendChild(row);
+    }
+  </script>
+
+</body>
+</html>

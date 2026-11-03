@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cash Memo</title>
+<style>
+    @page { size: A4 portrait; margin: 8mm; }
+    body { font-family: Arial, sans-serif; margin:0; padding:10px; background:#f3f4f6; }
+    .page { border: 2px solid #000; width: 100%; max-width: 700px; padding: 15px; margin: 10px auto; position: relative; background:white; box-sizing:border-box; }
+    .header-top { display: flex; justify-content: space-between; align-items: center; }
+    .dr-no { font-size: 18px; font-weight: bold; color: #333; }
+    .contact { font-size: 14px; font-weight: bold; }
+    .title { text-align: center; font-size: 24px; font-weight: bold; color: #000080; margin-top: 10px; }
+    .subtitle { text-align: center; font-size: 16px; color: #000080; margin-bottom: 20px; }
+    .form-line { display: flex; margin-bottom: 10px; align-items: center; }
+    .label { font-weight: bold; width: 80px; font-size: 13px; }
+    .input-line { border-bottom: 1px solid black; flex-grow: 1; height: 1.2em; }
+    .table-container { border: 1px solid black; margin-top: 20px; width: 100%; }
+    .table-container table { width: 100%; border-collapse: collapse; }
+    .table-container th, .table-container td { text-align: left; padding: 6px; }
+    .table-container th { border-bottom: 1px solid black; font-size: 16px; text-align: center; }
+    .table-container tr { height: 28px; }
+    .signature { text-align: right; margin-top: 30px; font-weight: bold; }
+    @media print { body { background: #fff; padding: 0; } .page { max-width: 100%; margin: 0; border: none; } }
+</style>
+</head>
+<body>
+<div class="page">
+    <div class="header-top">
+        <div class="dr-no">D.R. No. <span style="color:red;">{{DR_NO}}</span></div>
+        <div class="header-title"><span style="font-weight:bold;font-size:18px;">CASH MEMO</span></div>
+        <div class="contact">Mob.: 96809-92567<br>86196-06627</div>
+    </div>
+    <div class="title">Sant Kanwar Ram Transport Corp. (BHL.)</div>
+    <div class="subtitle">123-124, Transport Nagar, BHILWARA - 311001 (Raj.)</div>
+    <div class="form-line">
+        <div class="label">G.R. No.</div>
+        <div class="input-line">{{GR_NO}}</div>
+        <div style="width:110px;text-align:right;font-weight:bold;white-space:nowrap;padding-right:6px;">Serial no</div>
+        <div class="input-line" style="width:200px;flex-shrink:0;">{{RECEIVED_ON}}</div>
+    </div>
+    <div class="form-line">
+        <div class="label">From</div>
+        <div class="input-line">{{FROM}}</div>
+        <div style="width:110px;text-align:right;font-weight:bold;white-space:nowrap;padding-right:6px;">Dt.</div>
+        <div class="input-line" style="width:200px;flex-shrink:0;">{{DATE}}</div>
+    </div>
+    <div class="form-line">
+        <div class="label">Consignee</div>
+        <div class="input-line">{{CONSIGNEE}}</div>
+    </div>
+    <div class="form-line">
+        <div class="label">Through</div>
+        <div class="input-line">{{THROUGH}}</div>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead><tr><th style="width:70%;"></th><th style="width:15%;">Rs.</th><th style="width:15%;">P.</th></tr></thead>
+            <tbody>
+                <tr><td>Freight</td><td style="border-left:1px solid black;">{{FREIGHT}}</td><td style="border-left:1px solid black;">{{FREIGHT_P}}</td></tr>
+                <tr><td>Labour</td><td style="border-left:1px solid black;">{{LABOUR}}</td><td style="border-left:1px solid black;">{{LABOUR_P}}</td></tr>
+                <tr><td>Stationery</td><td style="border-left:1px solid black;">{{STATIONERY}}</td><td style="border-left:1px solid black;">{{STATIONERY_P}}</td></tr>
+                <tr><td>Commission</td><td style="border-left:1px solid black;">{{COMMISSION}}</td><td style="border-left:1px solid black;">{{COMMISSION_P}}</td></tr>
+                <tr><td>A.O.C.</td><td style="border-left:1px solid black;">{{AOC}}</td><td style="border-left:1px solid black;">{{AOC_P}}</td></tr>
+                <tr style="border-top:1px solid black;">
+                    <td style="font-weight:bold;">Total</td>
+                    <td style="border-left:1px solid black;">{{TOTAL}}</td>
+                    <td style="border-left:1px solid black;">{{TOTAL_P}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="signature">D. Clerk</div>
+</div>
+</body>
+</html>

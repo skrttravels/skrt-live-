@@ -1,0 +1,122 @@
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Truck, Shield, BarChart3, Globe, ArrowRight, PlayCircle } from "lucide-react";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+
+export default function LandingPage() {
+  return (
+    <div className="min-h-screen bg-background text-foreground selection:bg-primary/30">
+      {/* Navbar */}
+      <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-background/80 backdrop-blur-xl">
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="w-20 h-20  rounded-xl flex items-center justify-center ">
+              <img src="logobg.png" alt="Logo1" />
+            </div>
+      
+          </div>
+          <div className="hidden md:flex items-center gap-8">
+            <Link href="#features" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Features</Link>
+            <Link href="#tracking" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Live Tracking</Link>
+            <Link href="#about" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">About</Link>
+            <Link href="/login">
+              <Button variant="outline" className="rounded-full px-6">Login</Button>
+            </Link>
+            <Link href="/dashboard">
+              <Button className="rounded-full px-6 bg-primary hover:bg-primary/90">Get Started</Button>
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="pt-40 pb-20 px-6 relative overflow-hidden">
+        <div className="absolute top-[-20%] right-[-10%] w-[60%] h-[60%] bg-primary/5 rounded-full blur-[120px]" />
+        
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Badge className="mb-6 bg-primary/10 text-primary border-primary/20 px-4 py-1.5 rounded-full text-sm font-semibold">
+              v2.0 Now Live
+            </Badge>
+            <h1 className="text-6xl lg:text-7xl font-bold tracking-tighter leading-[1.1] mb-6">
+              Modern Logistics <br />
+              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+                Powering Enterprises.
+              </span>
+            </h1>
+            <p className="text-xl text-muted-foreground mb-10 max-w-xl leading-relaxed">
+              Transform your logistics operations with real-time tracking, intelligent analytics, and automated fleet management. Built for scale.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button size="lg" className="rounded-full h-14 px-8 text-lg bg-primary hover:bg-primary/90 shadow-xl shadow-primary/20">
+                Start Free Trial <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button size="lg" variant="ghost" className="rounded-full h-14 px-8 text-lg hover:bg-secondary">
+                <PlayCircle className="mr-2 h-5 w-5" /> Watch Demo
+              </Button>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            className="relative"
+          >
+            <div className="aspect-square bg-gradient-to-tr from-primary/20 to-accent/20 rounded-[4rem] flex items-center justify-center p-8 relative">
+              <div className="absolute inset-0 bg-white/5 backdrop-blur-3xl rounded-[4rem] border border-white/10" />
+              <img 
+                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000" 
+                alt="Logistics Dashboard" 
+                className="rounded-[2rem] shadow-2xl relative z-10 border border-white/10"
+              />
+            </div>
+            {/* Floating Stats */}
+            <motion.div 
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4, repeat: Infinity }}
+              className="absolute -top-4 -right-4 glassmorphism p-4 rounded-2xl z-20 shadow-xl"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-accent/20 rounded-lg flex items-center justify-center">
+                  <Shield className="w-5 h-5 text-accent" />
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground">Security</p>
+                  <p className="text-sm font-bold">100% Secure</p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20 px-6 border-y border-white/5 bg-secondary/10">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12">
+          {[
+            { label: "Active Trips", value: "12K+" },
+            { label: "Fleet Size", value: "450+" },
+            { label: "Client Satisfaction", value: "99.9%" },
+            { label: "Real-time Tracking", value: "24/7" },
+          ].map((stat, i) => (
+            <div key={i} className="text-center">
+              <p className="text-4xl font-bold mb-2">{stat.value}</p>
+              <p className="text-sm text-muted-foreground font-medium uppercase tracking-widest">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}
+
